@@ -12,24 +12,21 @@ b = bracket counter
 I = instruction
 S = skip function
 
-White space removed (292 bytes):
-i;p;q;b;I;char*c;S(){b=0;do{*c=='['?++b:*c==']'?--b:0;++c;}while(b);c--;}main(int n,char** a){for (i=1;i<n;i++) {p=q=0;int A[99]={0};int*s[9];c=a[i];while(*c){I=*c;I=='>'?p++:I=='<'?p--:I=='+'?A[p]++:I=='-'?A[p]--:I=='.'?putchar(A[p]):I==']'?c = s[--q]:A[p]?s[q++]=c:S();I!=']'?c++:0;}}}
+White space removed (273 bytes):
+i;p;q;b;I;char*c;S(){b=1;while(b){*++c=='['?++b:*c==']'?--b:0;}}main(int n,char**a){for(i=1;i<n;i++){p=q=0;int A[99]={0};int*s[9];c=a[i];while(*c){I=*c;I=='>'?p++:I=='<'?p--:I=='+'?A[p]++:I=='-'?A[p]--:I=='.'?putchar(A[p]):I==']'?c=s[--q]:A[p]?s[q++]=c:S();I!=']'?c++:0;}}}
 */
 
 i;p;q;b;I;
 char*c;
 
 S(){
-    b=0;
-    do{
-        *c=='['?++b:*c==']'?--b:0;
-        ++c;
-    }while(b);
-    c--;
+    b=1;
+    while(b){
+        *++c=='['?++b:*c==']'?--b:0;
+    }
 }
 
-
-main(int n,char** a){
+main(int n,char**a){
     for (i=1;i<n;i++) {
         p=q=0;
         int A[99]={0};
@@ -48,7 +45,7 @@ main(int n,char** a){
             I=='.'?
             putchar(A[p]):
             I==']'?
-            c = s[--q]:
+            c=s[--q]:
             A[p]?
             s[q++]=c:
             S();
