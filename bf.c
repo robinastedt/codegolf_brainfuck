@@ -12,8 +12,8 @@ b = bracket counter
 I = instruction
 S = skip function
 
-White space removed (220 bytes):
-p;q;I;char*c;S(b){while(b)b+=*++c>90?92-*c:0;}main(n,a)char**a;{int*s[9],A[99]={0};for(p=q=0,c=a[1];*c;c+=I!=93)I=*c,I==46?putchar(A[p]):I<91?*(I&16?&p:A+p)+=(I&2)-1:I>91?c=s[--q]:A[p]?s[q++]=c:S(1);n>2?main(n-1,a+1):0;}
+White space removed (219 bytes):
+p;q;I;char*c;S(b){while(b)b+=*++c>90?92-*c:0;}main(n,a)char**a;{int*s[9],A[99]={0};for(p=q=0,c=a[1];*c;c+=I!=93)I=*c,I==46?putchar(A[p]):I<91?*(I&16?&p:A+p)+=(I&2)-1:I>91?c=s[--q]:A[p]?s[q++]=c:S(1);n>2&&main(n-1,a+1);}
 
 + = 43, 0010 1011
 - = 45, 0010 1101
@@ -40,5 +40,5 @@ main(n,a)char**a;{
         I>91?c=s[--q]:
         A[p]?s[q++]=c:
         S(1);
-    n>2?main(n-1,a+1):0;
+    n>2&&main(n-1,a+1);
 }
