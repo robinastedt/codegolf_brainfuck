@@ -1,6 +1,5 @@
 
 /*
-i = program index
 n = argc
 a = argv
 p = pointer
@@ -9,11 +8,11 @@ A = array
 s = stack
 q = stack pointer
 b = bracket counter
-I = instruction
+i = instruction
 S = skip function
 
 White space removed (217 bytes):
-p;q;I;char*c;S(b){while(b)b+=*++c>90?92-*c:0;}main(n,a)int**a;{int*s[9],A[99]={0};for(p=q=0,c=a[1];*c;c+=I!=93)I=*c,I^46?I<91?*(I&16?&p:A+p)+=(I&2)-1:I>91?c=s[--q]:A[p]?s[q++]=c:S(1):putchar(A[p]);n>2&&main(n-1,a+1);}
+p;q;i;char*c;S(b){while(b)b+=*++c>90?92-*c:0;}main(n,a)int**a;{int*s[9],A[99]={0};for(p=q=0,c=a[1];*c;c+=i!=93)i=*c,i^46?i<91?*(i&16?&p:A+p)+=(i&2)-1:i>91?c=s[--q]:A[p]?s[q++]=c:S(1):putchar(A[p]);n>2&&main(n-1,a+1);}
 
 + = 43, 0010 1011
 - = 45, 0010 1101
@@ -25,7 +24,7 @@ p;q;I;char*c;S(b){while(b)b+=*++c>90?92-*c:0;}main(n,a)int**a;{int*s[9],A[99]={0
 
 */
 
-p;q;I;
+p;q;i;
 char*c;
 S(b){
     while(b)
@@ -33,11 +32,11 @@ S(b){
 }
 main(n,a)int**a;{
     int*s[9],A[99]={0};
-    for(p=q=0,c=a[1];*c;c+=I!=93)
-        I=*c,
-        I^46?
-        I<91?*(I&16?&p:A+p)+=(I&2)-1:
-        I>91?c=s[--q]:
+    for(p=q=0,c=a[1];*c;c+=i!=93)
+        i=*c,
+        i^46?
+        i<91?*(i&16?&p:A+p)+=(i&2)-1:
+        i>91?c=s[--q]:
         A[p]?s[q++]=c:
         S(1):
         putchar(A[p]);
